@@ -14,6 +14,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Add maven non root user.
 RUN useradd -m -d /usr/share/maven maven -s /bin/bash
 
+RUN chown -R maven /usr/share/maven
+
 ARG USER_HOME_DIR="/usr/share/maven"
 
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
