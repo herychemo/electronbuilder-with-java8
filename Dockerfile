@@ -1,6 +1,9 @@
 FROM electronuserland/builder:wine
 MAINTAINER Heriberto Reyes Esparza <hery.chemo@gmail.com>
 
+# Update wine Release key
+RUN wget -qO - https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key | apt-key add -
+
 # Update apt-get
 RUN apt-get update -y
 
